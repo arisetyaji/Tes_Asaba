@@ -27,8 +27,8 @@ func sqlQuery() {
     }
     defer db.Close()
 
-    var age = 27
-    rows, err := db.Query("select id, name, grade from tb_produk where age = ?", age)
+    var harga = 27
+    rows, err := db.Query("select id, name, harga from tb_produk where harga = ?", harga)
     if err != nil {
         fmt.Println(err.Error())
         return
