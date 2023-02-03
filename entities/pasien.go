@@ -1,8 +1,8 @@
 package entities
 
-type tb_produk struct {
-	Id           int
-	Nama		 string `validate:"required" label:"Nama Lengkap"`
-	Ongkir       int `validate:"required" label:"Ongkir"`
+type Pasien struct {
+	Id           int64
+	Nama		 string `validate:"required" label:"Nama"`
+	Harga        string `validate:"required"`
 	
 }

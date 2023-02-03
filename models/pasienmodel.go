@@ -3,7 +3,6 @@ package models
 import (
 	"database/sql"
 	"fmt"
-	"time"
 
 	"github.com/arisetyaji/Tes_Asaba/config"
 	"github.com/arisetyaji/Tes_Asaba/entities"
@@ -36,23 +35,9 @@ func (p *PasienModel) FindAll() ([]entities.Pasien, error) {
 	for rows.Next() {
 		var pasien entities.Pasien
 		rows.Scan(&pasien.Id,
-			&pasien.NamaLengkap,
-			&pasien.NIK,
-			&pasien.JenisKelamin,
-			&pasien.TempatLahir,
-			&pasien.TanggalLahir,
-			&pasien.Alamat,
-			&pasien.NoHp)
-
-		if pasien.JenisKelamin == "1" {
-			pasien.JenisKelamin = "Laki-laki"
-		} else {
-			pasien.JenisKelamin = "Perempuan"
-		}
-		// 2006-01-02 => yyyy-mm-dd
-		tgl_lahir, _ := time.Parse("2006-01-02", pasien.TanggalLahir)
-		// 02-01-2006 => dd-mm-yyyy
-		pasien.TanggalLahir = tgl_lahir.Format("02-01-2006")
+			&pasien.Nama,
+			&pasien.Harga)
+			
 
 		dataPasien = append(dataPasien, pasien)
 	}
@@ -63,8 +48,8 @@ func (p *PasienModel) FindAll() ([]entities.Pasien, error) {
 
 func (p *PasienModel) Create(pasien entities.Pasien) bool {
 
-	result, err := p.conn.Exec("insert into pasien (nama_lengkap, nik, jenis_kelamin, tempat_lahir, tanggal_lahir, alamat, no_hp) values(?,?,?,?,?,?,?)",
-		pasien.NamaLengkap, pasien.NIK, pasien.JenisKelamin, pasien.TempatLahir, pasien.TanggalLahir, pasien.Alamat, pasien.NoHp)
+	result, err := p.conn.Exec("insert into pasien (nama, harga) values(?,?,?)",
+		pasien.Nama, pasien.Harga)
 
 	if err != nil {
 		fmt.Println(err)
@@ -80,20 +65,15 @@ func (p *PasienModel) Find(id int64, pasien *entities.Pasien) error {
 
 	return p.conn.QueryRow("select * from pasien where id = ?", id).Scan(
 		&pasien.Id,
-		&pasien.NamaLengkap,
-		&pasien.NIK,
-		&pasien.JenisKelamin,
-		&pasien.TempatLahir,
-		&pasien.TanggalLahir,
-		&pasien.Alamat,
-		&pasien.NoHp)
+		&pasien.Nama,
+		&pasien.Harga)
 }
 
 func (p *PasienModel) Update(pasien entities.Pasien) error {
 
 	_, err := p.conn.Exec(
-		"update pasien set nama_lengkap = ?, nik = ?, jenis_kelamin = ?, tempat_lahir = ?, tanggal_lahir = ?, alamat = ?, no_hp = ? where id = ?",
-		pasien.NamaLengkap, pasien.NIK, pasien.JenisKelamin, pasien.TempatLahir, pasien.TanggalLahir, pasien.Alamat, pasien.NoHp, pasien.Id)
+		"update pasien set nama = ?, harga = ? ",
+		pasien.Nama, pasien.Harga)
 
 	if err != nil {
 		return err
