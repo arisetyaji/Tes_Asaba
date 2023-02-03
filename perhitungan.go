@@ -3,6 +3,7 @@ package main
 import "fmt"
 import "database/sql"
 import _ "github.com/go-sql-driver/mysql"
+//import "net/http"
 
 type produk struct {
     id    string
@@ -27,7 +28,7 @@ func sqlQuery() {
     }
     defer db.Close()
 
-    var harga = 27
+    var harga = 15000
     rows, err := db.Query("select id, name, harga from tb_produk where harga = ?", harga)
     if err != nil {
         fmt.Println(err.Error())
