@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/jeypc/go-crud/config"
-	"github.com/jeypc/go-crud/entities"
+	"github.com/arisetyaji/Tes_Asaba/config"
+	"github.com/arisetyaji/Tes_Asaba/entities"
 )
 
 type PasienModel struct {

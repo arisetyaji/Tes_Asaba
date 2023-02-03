@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/arisetyaji/TES_ASABA/libraries"
+	"github.com/arisetyaji/Tes_Asaba/libraries"
 
-	"github.com/arisetyaji/TES_ASABA/models"
+	"github.com/arisetyaji/Tes_Asaba/models"
 
-	"github.com/arisetyaji/TES_ASABA/entities"
+	"github.com/arisetyaji/Tes_Asaba/entities"
 )
 
 var validation = libraries.NewValidation()

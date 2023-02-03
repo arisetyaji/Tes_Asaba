@@ -1,4 +1,4 @@
-module Tes_Asaba
+module github.com/arisetyaji/Tes_Asaba
 
 go 1.19
 
