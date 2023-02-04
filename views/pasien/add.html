@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Golang CRUD</title>
+    <title>Golang Hitung</title>
 
     <style>
         .container {
@@ -22,8 +22,8 @@
 <body>
 
     <div class="container mt-5">
-        <h3>Tambah Data Pasien</h3>
-        <a href="/pasien" class="btn btn-sm btn-primary">Lihat Data</a>
+        <h3>Tambah Pesanan</h3>
+        
         <hr/>
 
         {{ if .pesan }}
@@ -33,33 +33,58 @@
         {{ end }}
 
         <form action="/pasien/add" method="post">
+            
             <div class="form-group">
                 <label for="">Nama</label>
-                <input type="text" name="nama_lengkap" value="{{ .pasien.NamaLengkap }}" class="form-control {{ if .validation.NamaLengkap }} is-invalid {{ end }}">
+                <input type="text" name="nama_lengkap" value="{{ .pasien.Nama }}" class="form-control {{ if .validation.Nama }} is-invalid {{ end }}">
                 <div class="invalid-feedback">
-                    {{ .validation.NamaLengkap }}
+                    {{ .validation.Nama }}
                 </div>
             </div>
+            
             <div class="form-group">
-                <label for="">Harga</label>
-                <input type="text" name="nik" value="{{ .pasien.NIK }}" class="form-control {{ if .validation.NIK }} is-invalid {{ end }}">
-                <div class="invalid-feedback">
-                    {{ .validation.NIK }}
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="">Ongkir</label>
+                <label for="">Nama Pesanan 1</label>
                 <select name="jenis_kelamin" class="form-control {{ if .validation.JenisKelamin }} is-invalid {{ end }}">
-                    <option value="">Pilih Jenis Kelamin</option>
-                    <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Laki-laki</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Perempuan</option>
+                    <option value="">Pilih Jenis Pesanan</option>
+                    <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Mie Ayam</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Ayam Geprek</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="3">Es Jeruk</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="4">Es Teh</option>
+                </select>
+                <label for="">Nama Pesanan 2</label>
+                <select name="jenis_kelamin" class="form-control {{ if .validation.JenisKelamin }} is-invalid {{ end }}">
+                    <option value="">Pilih Jenis Pesanan</option>
+                    <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Mie Ayam</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Ayam Geprek</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="3">Es Jeruk</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="4">Es Teh</option>
+                </select>
+                <label for="">Nama Pesanan 3</label>
+                <select name="jenis_kelamin" class="form-control {{ if .validation.JenisKelamin }} is-invalid {{ end }}">
+                    <option value="">Pilih Jenis Pesanan</option>
+                    <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Mie Ayam</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Ayam Geprek</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="3">Es Jeruk</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="4">Es Teh</option>
+                </select>
+                <label for="">Nama Pesanan 4</label>
+                <select name="jenis_kelamin" class="form-control {{ if .validation.JenisKelamin }} is-invalid {{ end }}">
+                    <option value="">Pilih Jenis Pesanan</option>
+                    <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Mie Ayam</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Ayam Geprek</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="3">Es Jeruk</option>
+                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="4">Es Teh</option>
+                    <option value="">tidak pesan</option>
                 </select>
                 <div class="invalid-feedback">
                     {{ .validation.JenisKelamin }}
                 </div>
-
+                <hr/>
+                <label for="">Ongkir Rp5000</label>
+                <hr/>
             <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">SIMPAN</button>
+                <button class="btn btn-primary btn-block" type="submit">Hitung</button>
+                <a href="/pasien/index" class="btn btn-sm btn-primary">Tambah Data</a>
             </div>
         </form>
         

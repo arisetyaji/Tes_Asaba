@@ -16,27 +16,26 @@
 <body>
 
     <div class="container mt-5">
-        <h3>Data Pasien</h3>
+        <h3>Hitung Pesanan Bersama</h3>
         <a href="/pasien/add" class="btn btn-sm btn-primary">Tambah Data</a>
         <hr/>
         <table class="table table-sriped table-hover">
             <thead>
                 <tr>
                     <th>Nama</th>
+                    <th>Pesanan</th>
                     <th>Harga</th>
-                    <th>Ongkir</th>                  
+                    <th>Hasil Uang</th>                  
                 </tr>
             </thead>
             <tbody>
                 {{ range .pasien }}
                     <tr>
-                        <td>{{ .NamaLengkap }}</td>
-                        <td>{{ .NIK }}</td>
-                        <td>{{ .JenisKelamin }}</td>
-                        <td>{{ .TempatLahir }}</td>
-                        <td>{{ .TanggalLahir }}</td>
-                        <td>{{ .Alamat }}</td>
-                        <td>{{ .NoHp }}</td>
+                        <td>{{ .Nama }}</td>
+                        <td>{{ .Pesanan }}</td>
+                        <td>{{ .Harga }}</td>
+                        <td>{{ .Hasil Uang }}</td>
+                        
                         <td>
                             <a href="/pasien/edit?id={{.Id}}" class="btn btn-sm btn-warning">Edit</a>
                             <a href="/pasien/delete?id={{.Id}}" onclick="return confirm('Aapakah anda yakin ingin menghapus data?')" class="btn btn-sm btn-danger">Hapus</a>
