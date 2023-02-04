@@ -48,32 +48,32 @@
                     <option value="">Pilih Jenis Pesanan</option>
                     <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Mie Ayam</option>
                     <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Ayam Geprek</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="3">Es Jeruk</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="4">Es Teh</option>
+                    <option {{ if eq .pasien.JenisKelamin `3` }} selected {{ end }} value="3">Es Jeruk</option>
+                    <option {{ if eq .pasien.JenisKelamin `4` }} selected {{ end }} value="4">Es Teh</option>
                 </select>
                 <label for="">Nama Pesanan 2</label>
                 <select name="jenis_kelamin" class="form-control {{ if .validation.JenisKelamin }} is-invalid {{ end }}">
                     <option value="">Pilih Jenis Pesanan</option>
                     <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Mie Ayam</option>
                     <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Ayam Geprek</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="3">Es Jeruk</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="4">Es Teh</option>
+                    <option {{ if eq .pasien.JenisKelamin `3` }} selected {{ end }} value="3">Es Jeruk</option>
+                    <option {{ if eq .pasien.JenisKelamin `4` }} selected {{ end }} value="4">Es Teh</option>
                 </select>
                 <label for="">Nama Pesanan 3</label>
                 <select name="jenis_kelamin" class="form-control {{ if .validation.JenisKelamin }} is-invalid {{ end }}">
                     <option value="">Pilih Jenis Pesanan</option>
                     <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Mie Ayam</option>
                     <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Ayam Geprek</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="3">Es Jeruk</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="4">Es Teh</option>
+                    <option {{ if eq .pasien.JenisKelamin `3` }} selected {{ end }} value="3">Es Jeruk</option>
+                    <option {{ if eq .pasien.JenisKelamin `4` }} selected {{ end }} value="4">Es Teh</option>
                 </select>
                 <label for="">Nama Pesanan 4</label>
                 <select name="jenis_kelamin" class="form-control {{ if .validation.JenisKelamin }} is-invalid {{ end }}">
                     <option value="">Pilih Jenis Pesanan</option>
                     <option {{ if eq .pasien.JenisKelamin `1` }} selected {{ end }} value="1">Mie Ayam</option>
                     <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="2">Ayam Geprek</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="3">Es Jeruk</option>
-                    <option {{ if eq .pasien.JenisKelamin `2` }} selected {{ end }} value="4">Es Teh</option>
+                    <option {{ if eq .pasien.JenisKelamin `3` }} selected {{ end }} value="3">Es Jeruk</option>
+                    <option {{ if eq .pasien.JenisKelamin `4` }} selected {{ end }} value="4">Es Teh</option>
                     <option value="">tidak pesan</option>
                 </select>
                 <div class="invalid-feedback">
@@ -83,8 +83,8 @@
                 <label for="">Ongkir Rp5000</label>
                 <hr/>
             <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">Hitung</button>
-                <a href="/pasien/index" class="btn btn-sm btn-primary">Tambah Data</a>
+                
+                <button href="/pasien/index" class="btn btn-primary btn-block" type="submit">Masukkan List</button>
             </div>
         </form>
         

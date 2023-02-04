@@ -36,10 +36,7 @@
                         <td>{{ .Harga }}</td>
                         <td>{{ .Hasil Uang }}</td>
                         
-                        <td>
-                            <a href="/pasien/edit?id={{.Id}}" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="/pasien/delete?id={{.Id}}" onclick="return confirm('Aapakah anda yakin ingin menghapus data?')" class="btn btn-sm btn-danger">Hapus</a>
-                        </td>
+                        
                     </tr>
                 {{ end }}
             </tbody>
